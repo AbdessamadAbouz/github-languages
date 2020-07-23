@@ -24,7 +24,10 @@ class languagesController extends Controller
                 $this->addToExsitingList($combined, $row);
             }
         }
-        dd(collect($combined));
+        return response()->json([
+            'message' => 'Data returned successfuly',
+            'Repos' => collect($combined)
+        ]);
     }
 
     ////Function to insert for the first time to our list
